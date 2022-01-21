@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="生信分析中常用的linux命令写在前面12# 经常忘记命令，放在网上好查询，写一遍博客复习一遍# 持续更新中……  一、linux基本命令1、查看命令帮助：1234561、man(mannal)命令#回车键：一次滚动手册一行#空格：一次滚动一屏&#x2F;页#&#x2F;-加option：搜索#q：退出2、命令 --help  2、显示文件和目录：1）pwd：显示当前路径2）tree：以树状形式列出文件夹的内容12t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生信分析中常用的linux命令">
+<meta property="og:url" content="https://caigouchen.github.io/2022/01/21/%E7%94%9F%E4%BF%A1%E5%88%86%E6%9E%90%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84linux%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="caigouchen">
+<meta property="og:description" content="生信分析中常用的linux命令写在前面12# 经常忘记命令，放在网上好查询，写一遍博客复习一遍# 持续更新中……  一、linux基本命令1、查看命令帮助：1234561、man(mannal)命令#回车键：一次滚动手册一行#空格：一次滚动一屏&#x2F;页#&#x2F;-加option：搜索#q：退出2、命令 --help  2、显示文件和目录：1）pwd：显示当前路径2）tree：以树状形式列出文件夹的内容12t">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-21T12:57:34.000Z">
+<meta property="article:modified_time" content="2022-01-21T14:12:14.284Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>生信分析中常用的linux命令 - caigouchen</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"caigouchen.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>CaigouChen&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="生信分析中常用的linux命令">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-21 20:57" pubdate>
+        2022年1月21日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      38 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">生信分析中常用的linux命令</h1>
+            
+            <div class="markdown-body">
+              <h3 id="生信分析中常用的linux命令"><a href="#生信分析中常用的linux命令" class="headerlink" title="生信分析中常用的linux命令"></a>生信分析中常用的linux命令</h3><h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><figure class="highlight shell"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 经常忘记命令，放在网上好查询，写一遍博客复习一遍</span><br><span class="hljs-meta">#</span><span class="bash"> 持续更新中……</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="一、linux基本命令"><a href="#一、linux基本命令" class="headerlink" title="一、linux基本命令"></a>一、linux基本命令</h4><h5 id="1、查看命令帮助："><a href="#1、查看命令帮助：" class="headerlink" title="1、查看命令帮助："></a>1、查看命令帮助：</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">1、man(mannal)命令<br><span class="hljs-meta">#</span><span class="bash">回车键：一次滚动手册一行</span><br><span class="hljs-meta">#</span><span class="bash">空格：一次滚动一屏/页</span><br><span class="hljs-meta">#</span><span class="bash">/-加option：搜索</span><br><span class="hljs-meta">#</span><span class="bash">q：退出</span><br>2、命令 --help<br></code></pre></td></tr></table></figure>
+
+<h5 id="2、显示文件和目录："><a href="#2、显示文件和目录：" class="headerlink" title="2、显示文件和目录："></a>2、显示文件和目录：</h5><h6 id="1）pwd：显示当前路径"><a href="#1）pwd：显示当前路径" class="headerlink" title="1）pwd：显示当前路径"></a>1）pwd：显示当前路径</h6><h6 id="2）tree：以树状形式列出文件夹的内容"><a href="#2）tree：以树状形式列出文件夹的内容" class="headerlink" title="2）tree：以树状形式列出文件夹的内容"></a>2）tree：以树状形式列出文件夹的内容</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">tree：当前目录<br>tree aaa：指定目录<br></code></pre></td></tr></table></figure>
+
+<h6 id="3）ls：以列表的方式列出文件夹中的内容（list）"><a href="#3）ls：以列表的方式列出文件夹中的内容（list）" class="headerlink" title="3）ls：以列表的方式列出文件夹中的内容（list）"></a>3）ls：以列表的方式列出文件夹中的内容（list）</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">显示结果中：蓝色表示目录，白色表示文件，绿色表示可执行文件，红色表示压缩包</span><br>ls -a：（all）显示所有文件，包括隐藏文件（.开头）<br>ls -l：以较长格式的方式显示内容/详细信息<br><span class="hljs-meta">#</span><span class="bash">文件类型描述（-表示这是一个文件，d为一个目录，l为链接文件）、文件的权限、硬链接数（快捷方式）、文件所属的用户、文件所属的组、文件大小（以字节为单位）、文件夹最后修改时间、文件名称</span><br>ls -h：以人性化方式显示文件内容（文件大小以kb大小显示）<br></code></pre></td></tr></table></figure>
+
+<h5 id="3、cd：切换工作目录："><a href="#3、cd：切换工作目录：" class="headerlink" title="3、cd：切换工作目录："></a>3、cd：切换工作目录：</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">绝对路径：cd /home/......<br>相对路径：./ 在当前目录，../ 回到上一级目录<br>一键回到家目录：cd /cd ~<br>回到上次所在的目录 cd -<br></code></pre></td></tr></table></figure>
+
+<h5 id="4、创建文件和文件夹："><a href="#4、创建文件和文件夹：" class="headerlink" title="4、创建文件和文件夹："></a>4、创建文件和文件夹：</h5><h6 id="1）mkdir：创建文件夹"><a href="#1）mkdir：创建文件夹" class="headerlink" title="1）mkdir：创建文件夹"></a>1）mkdir：创建文件夹</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir：创建单个文件夹<br>mkdir -p：递归创建目录<br></code></pre></td></tr></table></figure>
+
+<h6 id="2）touch：创建文件"><a href="#2）touch：创建文件" class="headerlink" title="2）touch：创建文件"></a>2）touch：创建文件</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">touch：后面加多个或一个文件（直接后面加文件名字）<br></code></pre></td></tr></table></figure>
+
+<h6 id="3）gedit：编辑文件"><a href="#3）gedit：编辑文件" class="headerlink" title="3）gedit：编辑文件"></a>3）gedit：编辑文件</h6><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">gedit：打开一个文件进行编辑<br></code></pre></td></tr></table></figure>
+
+<h5 id="5、rm：删除文件夹-文件（remove）"><a href="#5、rm：删除文件夹-文件（remove）" class="headerlink" title="5、rm：删除文件夹/文件（remove）"></a>5、rm：删除文件夹/文件（remove）</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">rm</span> <span class="hljs-literal">-i</span> 文件夹名：以交互模式删除，yes/y表示确认删除，no/y表示否<br><span class="hljs-built_in">rm</span> <span class="hljs-operator">-f</span> 文件夹名：强制删除，不做任何提示<br><span class="hljs-built_in">rm</span> <span class="hljs-literal">-r</span>：删除文件夹以及递归删除里面的文件<br></code></pre></td></tr></table></figure>
+
+<h5 id="6、cp：拷贝（copy）"><a href="#6、cp：拷贝（copy）" class="headerlink" title="6、cp：拷贝（copy）"></a>6、cp：拷贝（copy）</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">cp 源文件路径 目标文件路径<br><span class="hljs-meta">#</span><span class="bash">-i：如果被复制的文件夹内有同名的文件，给出提示，交互模式拷贝</span><br><span class="hljs-meta">#</span><span class="bash">-f：强制覆盖不提示</span><br><span class="hljs-meta">#</span><span class="bash">-v：查看整个拷贝的过程</span><br><span class="hljs-meta">#</span><span class="bash">-a：拷贝原有属性</span><br>cp -r：拷贝整个文件夹<br></code></pre></td></tr></table></figure>
+
+<h5 id="7、移动文件和文件夹"><a href="#7、移动文件和文件夹" class="headerlink" title="7、移动文件和文件夹"></a>7、移动文件和文件夹</h5><h6 id="1）mv：移动文件"><a href="#1）mv：移动文件" class="headerlink" title="1）mv：移动文件"></a>1）mv：移动文件</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">mv 源路径 目标路径<br><span class="hljs-meta">#</span><span class="bash">-i：交互式移动</span><br><span class="hljs-meta">#</span><span class="bash">-v：显示移动过程</span><br><span class="hljs-meta">#</span><span class="bash">-f：强制覆盖不提示</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="2）重命名"><a href="#2）重命名" class="headerlink" title="2）重命名"></a>2）重命名</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">在一个目录中进行移动才能进行重命名</span><br>mv 原文件名/文件夹名 新文件名/文件夹名<br></code></pre></td></tr></table></figure>
+
+<h5 id="8、查看文件内容"><a href="#8、查看文件内容" class="headerlink" title="8、查看文件内容"></a>8、查看文件内容</h5><h6 id="1）查看文件内容cat"><a href="#1）查看文件内容cat" class="headerlink" title="1）查看文件内容cat"></a>1）查看文件内容cat</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">显示文件的完整内容</span><br>cat -b：显示内容的行的行号（不包含空行）<br>cat -n：会显示所有行的行号（显示空行）<br></code></pre></td></tr></table></figure>
+
+<h6 id="2）分屏显示文件内容more"><a href="#2）分屏显示文件内容more" class="headerlink" title="2）分屏显示文件内容more"></a>2）分屏显示文件内容more</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">空格键：显示手册页的下一屏<br>回车：每次滚动一行<br><span class="hljs-meta">#</span><span class="bash">q：退出</span><br><span class="hljs-meta">#</span><span class="bash">b：回滚一屏</span><br><span class="hljs-meta">#</span><span class="bash">f：前滚一屏</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="3）搜索文件内容grep"><a href="#3）搜索文件内容grep" class="headerlink" title="3）搜索文件内容grep"></a>3）搜索文件内容grep</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">1、简单查找：<br>grep 搜索的内容  文本名<br><span class="hljs-meta">#</span><span class="bash">-n 显示匹配行及行号</span><br><span class="hljs-meta">#</span><span class="bash">-v 显示不包含匹配文本及行号</span><br><span class="hljs-meta">#</span><span class="bash">-i  忽略大小写</span><br>2、模式查找：（正则表达式）<br>3、行首匹配：在行首搜索有xxx的行，格式grep ^xxx 文件名<br>4、行尾匹配：在行尾搜索有xxx的行，格式grep xxx $ 文件名<br></code></pre></td></tr></table></figure>
+
+<h5 id="9、其它常用指令"><a href="#9、其它常用指令" class="headerlink" title="9、其它常用指令"></a>9、其它常用指令</h5><h6 id="1）查看命令位置which"><a href="#1）查看命令位置which" class="headerlink" title="1）查看命令位置which"></a>1）查看命令位置which</h6><h6 id="2）查找文件find"><a href="#2）查找文件find" class="headerlink" title="2）查找文件find"></a>2）查找文件find</h6><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-builtin-name">find</span> [路径] -name “*条件”<br></code></pre></td></tr></table></figure>
+
+<h6 id="3）软硬链接"><a href="#3）软硬链接" class="headerlink" title="3）软硬链接"></a>3）软硬链接</h6><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs excel"><span class="hljs-number">1</span>、软链接：类似于windows下的快捷方式<br><span class="hljs-built_in">ln</span> -s 被链接的源文件绝对路径 链接文件名<br><span class="hljs-number">2</span>、硬链接<br><span class="hljs-built_in">ln</span> 被链接的源文件绝对路径 链接文件名<br></code></pre></td></tr></table></figure>
+
+<h6 id="4）打包压缩"><a href="#4）打包压缩" class="headerlink" title="4）打包压缩"></a>4）打包压缩</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">1、tar.gz，tar是最常用的备份工具<br>打包：tar -cvf 打包文件名.tar 被打包的文件/路径……<br>解包：tar -xvf 打包文件名.tar<br>2、压缩：gzip  <br>合在一起：<br>压缩文件：tar -zcvf 打包文件名.tar.gz 被压缩的文件/路径<br>解压缩文件：tar -zxvf 打包文件名.tar.gz<br>解压缩到指定路径：tar -zxvf 打包文件名.tar.gz -C 目标路径<br>4、bzip2：xxx.tar.bz2<br>压缩文件：tar -jcvf 打包文件.tar.bz2 被压缩的文件/路径……<br>解压缩文件：tar -jxvf 打包文件名.tar.bz2trere<br><span class="hljs-meta">#</span><span class="bash">c：生成档案文件，创建打包文件</span><br><span class="hljs-meta">#</span><span class="bash">x：解开档案文件</span><br><span class="hljs-meta">#</span><span class="bash">v：列出归档解档的详细过程，显示进度</span><br><span class="hljs-meta">#</span><span class="bash">f：指定档案文件名称，f后面一定是.tar文件</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="5）软件安装apt"><a href="#5）软件安装apt" class="headerlink" title="5）软件安装apt"></a>5）软件安装apt</h6><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmake">安装软件：sudo apt <span class="hljs-keyword">install</span> 软件包<br>卸载软件：sudo apt <span class="hljs-keyword">remove</span> 软件包<br>更新已安装的包：sudo apt upgrade<br></code></pre></td></tr></table></figure>
+
+<h6 id="6）echo在终端中显示你输入的内容"><a href="#6）echo在终端中显示你输入的内容" class="headerlink" title="6）echo在终端中显示你输入的内容"></a>6）echo在终端中显示你输入的内容</h6><h6 id="7）重定向"><a href="#7）重定向" class="headerlink" title="7）重定向"></a>7）重定向</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">表示输出，会覆盖文件原有的内容：&gt;<br>表示追加，会将内容追加到已有文件的末尾：&gt;&gt;<br><span class="hljs-built_in">echo</span> 内容&gt;文件名：可以直接创建一个文件并且把内容写进去，也可以结合前面的命令将显示在终端的结果写入文件中<br></code></pre></td></tr></table></figure>
+
+<h6 id="8）管道"><a href="#8）管道" class="headerlink" title="8）管道|"></a>8）管道|</h6><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">可以将一个命令的输出可以通过管道作为另一个命令的输入<span class="hljs-comment">;可以用来过滤执行结果</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="二、远程管理"><a href="#二、远程管理" class="headerlink" title="二、远程管理"></a>二、远程管理</h4><h5 id="1、查看或配置网卡设置信息"><a href="#1、查看或配置网卡设置信息" class="headerlink" title="1、查看或配置网卡设置信息"></a>1、查看或配置网卡设置信息</h5><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs armasm">网卡是一个专门负责网络通讯的硬件设备，<span class="hljs-built_in">IP</span>地址是设置在网卡上的地址信息<br></code></pre></td></tr></table></figure>
+
+<h6 id="1）ifconfig：查看-设置计算机当前的网卡配置信息"><a href="#1）ifconfig：查看-设置计算机当前的网卡配置信息" class="headerlink" title="1）ifconfig：查看/设置计算机当前的网卡配置信息"></a>1）ifconfig：查看/设置计算机当前的网卡配置信息</h6><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">查看网卡配置信息：ifconfig <span class="hljs-string">| grep inet</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="2）ping：检测到目标ip地址的连接是否正常"><a href="#2）ping：检测到目标ip地址的连接是否正常" class="headerlink" title="2）ping：检测到目标ip地址的连接是否正常"></a>2）ping：检测到目标ip地址的连接是否正常</h6><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs autoit"><span class="hljs-built_in">ping</span> ip地址<br><span class="hljs-meta">#检测当前的计算机到目标计算机的网络是否畅通，数值越大，速度越慢</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="2、远程登录和复制文件"><a href="#2、远程登录和复制文件" class="headerlink" title="2、远程登录和复制文件"></a>2、远程登录和复制文件</h5><h6 id="1）一些概念"><a href="#1）一些概念" class="headerlink" title="1）一些概念"></a>1）一些概念</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell">1、ssh基础(secure  shell)：<br>数据传输是加密和压缩的，可以防止信息泄露，提高传输速度,在ssh客服端和ssh服务器安装对应的软件,ssh客服端linux默认安装<br>2、域名、端口号<br>域名：是ip地址的别名<br>端口号：通过端口号可以找到计算机上运行的应用程序<br>SSH服务器默认端口：22<br>ssh [-p  port]  user@remote<br><span class="hljs-meta">#</span><span class="bash">user：是远程机器上的用户名，如果不指定的话默认为当前用户</span><br><span class="hljs-meta">#</span><span class="bash">remote：是远程机器的地址，可以使IP/域名，或者是后面会提到的别名</span><br><span class="hljs-meta">#</span><span class="bash">port：是SSH Server监听的端口，如果不指定默认22</span><br>用exit退出登录<br></code></pre></td></tr></table></figure>
+
+<h6 id="2）远程拷贝文件scp：secure-copy"><a href="#2）远程拷贝文件scp：secure-copy" class="headerlink" title="2）远程拷贝文件scp：secure copy"></a>2）远程拷贝文件scp：secure copy</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1</span>、把本地复制到远程计算机<br>scp <span class="hljs-operator">-</span>P port 本地文件 <span class="hljs-keyword">user</span><span class="hljs-variable">@remote</span>：远程文件<br><span class="hljs-number">2</span>、把远程计算机本地复制到本地<br>scp <span class="hljs-operator">-</span>P port <span class="hljs-keyword">user</span><span class="hljs-variable">@remote</span>：远程文件 本地文件 <br>scp <span class="hljs-operator">-</span>r <span class="hljs-keyword">user</span><span class="hljs-variable">@remote</span>：远程文件夹 本地文件夹<br></code></pre></td></tr></table></figure>
+
+<h5 id="3、免密码登录"><a href="#3、免密码登录" class="headerlink" title="3、免密码登录"></a>3、免密码登录</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs routeros">1、配置公钥<br>ssh-keygen：生成SSH钥匙，然后一路回车<br>产生：id_rsa（私钥）、id_rsa.pub（公钥）加密文件<br>使用公钥加密的数据需要使用私钥解密，使用私钥加密的数据使用公钥解密<br>2、上传公钥到服务器<br>ssh-copy-id  -p <span class="hljs-built_in"> port </span> user@remote；可以让远程服务器记住我们的公钥<br>3、配置别名<br>在.ssh文件夹中创建config 文件<br>在~/.ssh<span class="hljs-built_in">/config </span>文件中追加<br>Host 别名<br>  HostName ip地址<br> <span class="hljs-built_in"> User </span>远层计算机用户名<br> <span class="hljs-built_in"> Port </span>22<br>然后就可以用ssh 别名进行连接了 <br></code></pre></td></tr></table></figure>
+
+<h4 id="三、用户权限相关命令"><a href="#三、用户权限相关命令" class="headerlink" title="三、用户权限相关命令"></a>三、用户权限相关命令</h4><h5 id="1、对于文件-目录的权限："><a href="#1、对于文件-目录的权限：" class="headerlink" title="1、对于文件/目录的权限："></a>1、对于文件/目录的权限：</h5><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>权限</th>
+<th>英文</th>
+<th>编写</th>
+<th>数字代号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>读</td>
+<td>read</td>
+<td>r</td>
+<td>4</td>
+</tr>
+<tr>
+<td>02</td>
+<td>写</td>
+<td>write</td>
+<td>w</td>
+<td>2</td>
+</tr>
+<tr>
+<td>03</td>
+<td>执行</td>
+<td>excute</td>
+<td>x</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h6 id="ls-l扩展"><a href="#ls-l扩展" class="headerlink" title="ls-l扩展"></a>ls-l扩展</h6><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk">可以以列表的方式查看<br>第<span class="hljs-number">2</span>个起表示权限<span class="hljs-number">9</span>个字母，<span class="hljs-number">3</span>个为一组：第一组：所有者权限；第二组：组权限；第三组：其他用户权限<br>硬链接数可以查看文件夹后面的子目录<br>chmod修改用户<span class="hljs-regexp">/组对文件/</span>目录的权限：chmod -<span class="hljs-regexp">/+ rwx 文件名/</span>目录<br></code></pre></td></tr></table></figure>
+
+<h5 id="2、超级用户：root"><a href="#2、超级用户：root" class="headerlink" title="2、超级用户：root"></a>2、超级用户：root</h5><h6 id="1）创建组、删除组"><a href="#1）创建组、删除组" class="headerlink" title="1）创建组、删除组"></a>1）创建组、删除组</h6><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo groupadd 组名：添加组<br>sudo groupdel  组名：删除组<br>sudo chgrp -R 组名、文件<span class="hljs-regexp">/目录名：递归修改文件/</span>目录的所属组<br></code></pre></td></tr></table></figure>
+
+<h6 id="2）创建用户、设置密码、删除用户"><a href="#2）创建用户、设置密码、删除用户" class="headerlink" title="2）创建用户、设置密码、删除用户"></a>2）创建用户、设置密码、删除用户</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">1、sudo useradd -m -g 组名 用户名：添加新用户<br><span class="hljs-meta">#</span><span class="bash">-m自动建立用户家目录</span><br><span class="hljs-meta">#</span><span class="bash">-g指定用户所在的组，否则会建立一个和用户同名的组</span><br>2、sudo passwd 用户名：设置用户密码<br>3、sudo userdel -r 用户名：删除用户（-r删除用户家目录<br></code></pre></td></tr></table></figure>
+
+<h6 id="3）查看用户信息"><a href="#3）查看用户信息" class="headerlink" title="3）查看用户信息"></a>3）查看用户信息</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell">1、id  用户名：查看用户UID和GID信息<br>/etc/password：文件存放的是用户的信息，由6个分组组成7个信息，分别是：<br><span class="hljs-meta">#</span><span class="bash">1、用户名</span><br><span class="hljs-meta">#</span><span class="bash">2、密码（x表示加密的密码）</span><br><span class="hljs-meta">#</span><span class="bash">3、UID：用户标识</span><br><span class="hljs-meta">#</span><span class="bash">4、GID：组标识</span><br><span class="hljs-meta">#</span><span class="bash">5、用户全名或本地账号</span><br><span class="hljs-meta">#</span><span class="bash">6、家目录</span><br><span class="hljs-meta">#</span><span class="bash">7、登录时使用的Shell，就是登录之后使用的终端命令，ubuntu默认是dash</span><br>2、who 查看当前所有登录的用户列表<br>3、whoami查看当前登录的账户名<br>4、usermod设置用户的主组/附加组和登录Shell<br>主组：通常在新建立用户时指定，在etc/passwd的第4列GID对应的值<br>附加组：在etc/group中最后一列表示该组的用户列表，用于指定用户的附加权限<br>sudo usermod -G 组 用户名：修改附加组<br>sudo usermod -g 组 用户名：修改主组<br>sudo usermod -s /bin/bash 用户名：修改shell，在windows中使用不方便，用此命令就可以改变<br></code></pre></td></tr></table></figure>
+
+<h6 id="4）which查看执行命令所处位置"><a href="#4）which查看执行命令所处位置" class="headerlink" title="4）which查看执行命令所处位置"></a>4）which查看执行命令所处位置</h6><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs awk">etc/passwd：用户保存用户信息文件<br><span class="hljs-regexp">/user/</span>bin/passwd：用户修改用户密码的程序<br>bin：二进制可执行文件目录，主要用于具体应用<br>sbin：是系统管理员专用的二进制代码存放目录，主要用于系统管理<br><span class="hljs-regexp">/user/</span>bin：后期安装的一些软件<br><span class="hljs-regexp">/user/</span>sbin：超级用户的一些管理程序<br></code></pre></td></tr></table></figure>
+
+<h6 id="5）切换用户"><a href="#5）切换用户" class="headerlink" title="5）切换用户"></a>5）切换用户</h6><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">su（-）用户名：切换用户，（-切换目录）<br><span class="hljs-comment">#不接用户名：可以切换到root用户</span><br><span class="hljs-keyword">exit</span>：退出当前登录用户<br></code></pre></td></tr></table></figure>
+
+<h6 id="6）修改文件权限"><a href="#6）修改文件权限" class="headerlink" title="6）修改文件权限"></a>6）修改文件权限</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">1、chown：修改拥有者<br>chown  用户名  文件名/目录名<br>2、chgrp：修改组<br>3、chmod：修改文件权限<br>chmod  -R  755  文件名/目录的权限<br><span class="hljs-meta">#</span><span class="bash">755（三个数字）分别对应拥有者、组用户、其他与用户的权限</span><br><span class="hljs-meta">#</span><span class="bash">-R递归的修改目录及子目录的所有权限</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="3、系统信息相关的命令"><a href="#3、系统信息相关的命令" class="headerlink" title="3、系统信息相关的命令"></a>3、系统信息相关的命令</h5><h6 id="1）时间和日期"><a href="#1）时间和日期" class="headerlink" title="1）时间和日期"></a>1）时间和日期</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">cal  -3/-y/-j：默认显示当前月的日历<br><span class="hljs-meta">#</span><span class="bash">-3 打印当前月、上月、下月</span><br><span class="hljs-meta">#</span><span class="bash">-y 打印一年</span><br><span class="hljs-meta">#</span><span class="bash">-j 显示一年中的第多少天</span><br>date：查看系统时间<br></code></pre></td></tr></table></figure>
+
+<h6 id="2）磁盘信息"><a href="#2）磁盘信息" class="headerlink" title="2）磁盘信息"></a>2）磁盘信息</h6><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">df -h：<span class="hljs-keyword">disk </span>free 显示磁盘的剩余空间<br>du -h[目录名]：<span class="hljs-keyword">disk </span>usage 显示目录下的文件大小平时<br></code></pre></td></tr></table></figure>
+
+<h6 id="3）进程信息"><a href="#3）进程信息" class="headerlink" title="3）进程信息"></a>3）进程信息</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">进程：当前正在执行的程序 PID进程代号<br>-----------------------------------------------------------<br>ps a/u/s：process status查看进程的详细状况<br><span class="hljs-meta">#</span><span class="bash">a：显示终端上的所有进程</span><br><span class="hljs-meta">#</span><span class="bash">u：显示进程的详细状态</span><br><span class="hljs-meta">#</span><span class="bash">s：显示没有控制终端的进程</span><br>top：动态显示运行中的进程并且排序，q退出<br>kill [-9] 进程代号：终止指定代号的进程，-9表示强行终止<br></code></pre></td></tr></table></figure>
+
+<h4 id="四、进阶"><a href="#四、进阶" class="headerlink" title="四、进阶"></a>四、进阶</h4>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                      <a class="hover-with-bg" href="/tags/linux/">linux</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/01/18/python%E5%AE%9E%E7%8E%B0Needleman-Wunsch%E7%AE%97%E6%B3%95/">
+                        <span class="hidden-mobile">双序列全局比对：Biopython包的应用及手撕Needleman-Wunsch算法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
